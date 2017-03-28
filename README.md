@@ -11,13 +11,16 @@ The list of things left un-implemented are:
 
 
 CameraController.swift :
+
 the buttons at the top var (flash, hdr, live, duration and filter) 
+
 the actions of each camera option in the bottom bar
 
-
+Recording videos
 
 
 SinglePhotoViewController.swift :
+
 The buttons in the bottom bar
 
 
@@ -42,8 +45,10 @@ Be sure to add these two to your info.plist or you will surely receive an error.
 
 
 
-
+<br/>
+<br />
 
 
 This is the error you will receive.
+
 <img src="image3.png" style="height: 300px; width: 100px;" />
