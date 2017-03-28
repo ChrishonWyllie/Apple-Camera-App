@@ -33,9 +33,8 @@ The buttons in the bottom bar
 This is NOT intended for sale!
 
 
-<img src="image1.png" height = "300" width = "100"/>
-<img src="image2.png" style="height: 300px; width: 100px;" />
-
+<img src="image1.png" height = "500" width = "200"/>
+<img src="image2.png" height = "500" width = "200"/>
 
 
 Be sure to add these two to your info.plist or you will surely receive an error.
@@ -45,7 +44,7 @@ Be sure to add these two to your info.plist or you will surely receive an error.
 "NSPhotoLibraryUsageDescription" with a string of what ever you like
 
 "NSMicrophoneUsageDescription" with a string of whatever you like
-
+<br/>
 <img src="image4.png" style="height: 300px; width: 100px;" />
 
 
@@ -55,5 +54,5 @@ Be sure to add these two to your info.plist or you will surely receive an error.
 
 
 This is the error you will receive.
-
+<br/>
 <img src="image3.png" style="height: 300px; width: 100px;" />
