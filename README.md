@@ -11,24 +11,29 @@ The list of things left un-implemented are:
 
 
 CameraController.swift :
-
+<br/>
 the buttons at the top var (flash, hdr, live, duration and filter) 
-
+<br/>
 the actions of each camera option in the bottom bar
-
+<br/>
 Recording videos
 
+<br/>
+<br/>
+<br/>
 
 SinglePhotoViewController.swift :
-
+<br/>
 The buttons in the bottom bar
+<br/>
+<br/>
+<br/>
 
 
+This is NOT intended for sale!
 
-This is NOT intended for sale 
 
-
-<img src="image1.png" style="height: 300px; width: 100px;" />
+<img src="image1.png" height = "300" width = "100"/>
 <img src="image2.png" style="height: 300px; width: 100px;" />
 
 
