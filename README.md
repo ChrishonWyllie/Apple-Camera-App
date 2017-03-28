@@ -2,7 +2,24 @@
 
 A less detailed version of the Apple Camera App to demonstrate some features.
 
-Some features were purposely left un-implemented
+Some features were purposely left un-implemented.
+
+The list of things left un-implemented are:
+
+CameraController.swift :
+
+the buttons at the top var (flash, hdr, live, duration and filter) 
+
+the actions of each camera option in the bottom bar
+
+
+
+
+SinglePhotoViewController.swift :
+
+The buttons in the bottom bar
+
+
 
 This is NOT intended for sale 
 
@@ -13,11 +30,15 @@ This is NOT intended for sale
 
 
 Be sure to add these two to your info.plist or you will surely receive an error.
+
 "NSCameraUsageDescription" with a string of what ever you like
+
 "NSPhotoLibraryUsageDescription" with a string of what ever you like
 
-<img src="image3.png" style="height: 300px; width: 100px;" />
+NSMicrophoneUsageDescription" with a string of whatever you like
+
+<img src="image4.png" style="height: 300px; width: 100px;" />
 
 
 This is the error you will receive.
-<img src="image4.png" style="height: 300px; width: 100px;" />
+<img src="image3.png" style="height: 300px; width: 100px;" />
