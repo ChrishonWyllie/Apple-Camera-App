@@ -33,8 +33,8 @@ The buttons in the bottom bar
 This is NOT intended for sale!
 
 
-<img src="image1.png" height = "500" width = "400"/>
-<img src="image2.png" height = "500" width = "400"/>
+<img src="image1.png" height = "500" width = "300"/>
+<img src="image2.png" height = "500" width = "300"/>
 
 
 Be sure to add these two to your info.plist or you will surely receive an error.
