@@ -19,6 +19,8 @@ class SinglePhotoViewController: UIViewController {
     
     
     // MARK: - UI Elements
+    
+    // MARK: - Top bar elements
     var topbarView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -33,7 +35,31 @@ class SinglePhotoViewController: UIViewController {
         button.setTitle("Camera", for: .normal)
         return button
     }()
+    
+    // This label does not actually display the time the photo or video was captured. Just a demonstration
+    var titleLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 2
+        label.text = "Today 1:42 PM"
+        label.font = UIFont.systemFont(ofSize: 16)
+        label.textAlignment = .center
+        return label
+    }()
+    
+    // Just a demonstration. Won't actually open the Photos App
+    var allPhotosButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("All Photos", for: .normal)
+        return button
+    }()
 
+    
+    
+    
+    // MARK: - Center ImageView
+    
     // Specify as lazy to use UITapGestureRecognizer
     lazy var lastPhotoImageView: UIImageView = {
         let imageView = UIImageView()
@@ -55,6 +81,9 @@ class SinglePhotoViewController: UIViewController {
         return imageView
     }()
     
+    
+    
+    // MARK: - Bottom bar elements
     var bottombarView: UIView = {
         let view = UIView()
         
@@ -99,6 +128,37 @@ class SinglePhotoViewController: UIViewController {
     }()
     
     
+    // These buttons also have no function. Just a demonstration
+    var shareButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Share", for: .normal)
+        return button
+    }()
+    var heartButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Heart", for: .normal)
+        return button
+    }()
+    var filterButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Filter", for: .normal)
+        return button
+    }()
+    var trashButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Trash", for: .normal)
+        return button
+    }()
+    
+    
+    
+    
+    
+    
     // MARK - Functions
     
     var barsHidden = false
@@ -125,10 +185,15 @@ class SinglePhotoViewController: UIViewController {
         // This is added after the lastphotoImageView because it will get covered otherwise
         view.addSubview(topbarView)
         topbarView.addSubview(cancelButton)
+        topbarView.addSubview(titleLabel)
+        topbarView.addSubview(allPhotosButton)
         
         view.addSubview(bottombarView)
         bottombarView.addSubview(photosCollectionView)
-        
+        bottombarView.addSubview(shareButton)
+        bottombarView.addSubview(heartButton)
+        bottombarView.addSubview(filterButton)
+        bottombarView.addSubview(trashButton)
         
         topbarView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         topbarView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
@@ -136,10 +201,22 @@ class SinglePhotoViewController: UIViewController {
         topbarView.heightAnchor.constraint(equalToConstant: 70).isActive = true
         
         
-        
-        cancelButton.centerYAnchor.constraint(equalTo: topbarView.centerYAnchor).isActive = true
+        //cancelButton.centerYAnchor.constraint(equalTo: topbarView.centerYAnchor).isActive = true
         cancelButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         cancelButton.leadingAnchor.constraint(equalTo: topbarView.leadingAnchor, constant: 8).isActive = true
+        cancelButton.bottomAnchor.constraint(equalTo: topbarView.bottomAnchor).isActive = true
+        
+        titleLabel.widthAnchor.constraint(equalToConstant: view.frame.size.width / 5).isActive = true
+        titleLabel.centerXAnchor.constraint(equalTo: topbarView.centerXAnchor).isActive = true
+        titleLabel.bottomAnchor.constraint(equalTo: topbarView.bottomAnchor, constant: -5).isActive = true
+        
+        //allPhotosButton.centerYAnchor.constraint(equalTo: topbarView.centerYAnchor).isActive = true
+        allPhotosButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        allPhotosButton.trailingAnchor.constraint(equalTo: topbarView.trailingAnchor, constant: -8).isActive = true
+        allPhotosButton.bottomAnchor.constraint(equalTo: topbarView.bottomAnchor).isActive = true
+        
+        
+        
         
         
         lastPhotoImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
@@ -153,13 +230,30 @@ class SinglePhotoViewController: UIViewController {
         bottombarView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         bottombarView.heightAnchor.constraint(equalToConstant: 100).isActive = true
         
-        
         photosCollectionView.leadingAnchor.constraint(equalTo: bottombarView.leadingAnchor).isActive = true
         photosCollectionView.topAnchor.constraint(equalTo: bottombarView.topAnchor).isActive = true
         photosCollectionView.trailingAnchor.constraint(equalTo: bottombarView.trailingAnchor).isActive = true
         photosCollectionView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
+        shareButton.leadingAnchor.constraint(equalTo: bottombarView.leadingAnchor, constant: 8).isActive = true
+        shareButton.topAnchor.constraint(equalTo: photosCollectionView.bottomAnchor).isActive = true
+        shareButton.widthAnchor.constraint(equalToConstant: view.frame.size.width / 4).isActive = true
+        shareButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
+        heartButton.leadingAnchor.constraint(equalTo: shareButton.trailingAnchor).isActive = true
+        heartButton.topAnchor.constraint(equalTo: photosCollectionView.bottomAnchor).isActive = true
+        heartButton.widthAnchor.constraint(equalToConstant: view.frame.size.width / 4).isActive = true
+        heartButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        filterButton.leadingAnchor.constraint(equalTo: heartButton.trailingAnchor).isActive = true
+        filterButton.topAnchor.constraint(equalTo: photosCollectionView.bottomAnchor).isActive = true
+        filterButton.widthAnchor.constraint(equalToConstant: view.frame.size.width / 4).isActive = true
+        filterButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        trashButton.trailingAnchor.constraint(equalTo: bottombarView.trailingAnchor, constant: -8).isActive = true
+        trashButton.topAnchor.constraint(equalTo: photosCollectionView.bottomAnchor).isActive = true
+        trashButton.widthAnchor.constraint(equalToConstant: view.frame.size.width / 4).isActive = true
+        trashButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
     }
     
@@ -232,6 +326,11 @@ extension SinglePhotoViewController: UICollectionViewDataSource, UICollectionVie
         
         let asset = phassetImageArray[indexPath.item]
         
+        // Could be used to update titleLabel with creation date of image or video
+        // the DateFormat is "yyyy-MM-dd HH:mm:ss ZZZZ"
+        let photoCreationDate = asset.creationDate
+        print("creation Date: \(String(describing: photoCreationDate))")
+        
         // This will be used to retrieve a specific UIImage when a cell is tapped
         let imgManager = PHImageManager.default()
         
@@ -248,6 +347,8 @@ extension SinglePhotoViewController: UICollectionViewDataSource, UICollectionVie
         imgManager.requestImage(for: asset, targetSize: thumbnailSize, contentMode: .aspectFill, options: reqOptions, resultHandler: { (image, info) in
             // when a cell is tapped, set the main image to the image retrieved from that PHAsset
             self.lastPhotoImageView.image = image
+            
+            //print("image info: \(String(describing: info))")
         })
         
         // Finall scroll to that cell
@@ -269,6 +370,7 @@ class PhotosCell: UICollectionViewCell {
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
+    
     
     let imgManager = PHImageManager.default()
     
