@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		666003F01F71A25700411EC5 /* CameraOptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666003EF1F71A25700411EC5 /* CameraOptionsCell.swift */; };
 		668EC2791E89884700AA52A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668EC2781E89884700AA52A0 /* AppDelegate.swift */; };
 		668EC27B1E89884700AA52A0 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668EC27A1E89884700AA52A0 /* CameraController.swift */; };
 		668EC27E1E89884700AA52A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 668EC27C1E89884700AA52A0 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		666003EF1F71A25700411EC5 /* CameraOptionsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraOptionsCell.swift; sourceTree = "<group>"; };
 		668EC2751E89884700AA52A0 /* Apple-Camera-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Apple-Camera-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		668EC2781E89884700AA52A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		668EC27A1E89884700AA52A0 /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
@@ -41,6 +43,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		666003ED1F71A21C00411EC5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				666003EF1F71A25700411EC5 /* CameraOptionsCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		666003EE1F71A22500411EC5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				668EC27A1E89884700AA52A0 /* CameraController.swift */,
+				668EC28E1E89CB7900AA52A0 /* SinglePhotoViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		668EC26C1E89884700AA52A0 = {
 			isa = PBXGroup;
 			children = (
@@ -61,8 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				668EC2781E89884700AA52A0 /* AppDelegate.swift */,
-				668EC27A1E89884700AA52A0 /* CameraController.swift */,
-				668EC28E1E89CB7900AA52A0 /* SinglePhotoViewController.swift */,
+				666003EE1F71A22500411EC5 /* Controllers */,
+				666003ED1F71A21C00411EC5 /* Views */,
 				668EC27C1E89884700AA52A0 /* Main.storyboard */,
 				668EC27F1E89884700AA52A0 /* Assets.xcassets */,
 				668EC2811E89884700AA52A0 /* LaunchScreen.storyboard */,
@@ -150,6 +169,7 @@
 				668EC2791E89884700AA52A0 /* AppDelegate.swift in Sources */,
 				668EC28D1E899B5D00AA52A0 /* BottombarFunctions.swift in Sources */,
 				668EC28B1E899B4A00AA52A0 /* TopbarFunctions.swift in Sources */,
+				666003F01F71A25700411EC5 /* CameraOptionsCell.swift in Sources */,
 				668EC28F1E89CB7900AA52A0 /* SinglePhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
